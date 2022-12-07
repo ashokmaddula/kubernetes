@@ -1,0 +1,22 @@
+---
+apiversion: v1
+kind: ReplicationController
+metadata:
+  name: nginx-rpc
+spec:
+  minReadySeconds: 3
+  repilica: 5
+  selector:
+       app: nginx
+  template:
+    metadata:
+    labels:
+      app: nginx
+      ver: 1.23
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.23
+          ports:
+            - containerport: 80
+              protocl: TCP
