@@ -1,0 +1,17 @@
+---
+apiversion: v1
+kind: pod
+metadata:
+  - name: first-pod
+spec:
+  containers :
+    - image: nginx:1.23
+      name: nginx
+      ports:
+        - containerport: 80
+          protocl: tcp
+    - image: jenkins/jenkins:lts-jdk
+      name: jenkins/jenkins:lts-jdk
+      ports: 
+        - containersport: 8080
+          protocl: tcp      

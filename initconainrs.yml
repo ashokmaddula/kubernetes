@@ -1,0 +1,23 @@
+---
+apiversion: v1
+kind: pod
+metadata:
+  name: initcontainers
+spec: 
+  initcontainers:
+    - name: init-cont1
+      image: alpine:3
+      command:
+        - sleep
+        - "30"
+    - name: init-cont2
+      image: alpine:3
+      command:
+        - sleep
+        - "30"
+  containers:
+    - name: nginx
+      image: nginx:1.23
+      ports:
+        - containerport: 80
+          protocol: TCP       

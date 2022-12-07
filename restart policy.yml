@@ -1,0 +1,29 @@
+---
+apiversion: v1
+kind: pod
+metadata: 
+  name: restart-never
+spec:
+  containers:
+    - name: restart-never
+      image: alpine:3
+      command:
+        - sleep
+        - "2"    
+  restartpolicy: never
+
+---
+apiversion: v1
+kind: pod
+metadata: 
+  name: restart-nopolicy
+spec:
+  containers:  
+    - name: restart-nopolicy
+      image: alpine:3
+      command:
+        - sleep
+        - "2"
+env:
+  - name: MESSAGE
+    value: "hello world"             
