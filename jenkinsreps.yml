@@ -9,12 +9,12 @@ metadata:
 spec:
   replicas: 4
   selector:
-  matchlabels:
+  matchLabels:
     purpose: cicd
   template:
     metadata:
-    labels:
-      purpose: cicd
+      labels:
+        purpose: cicd
     spec:
       containers:
         - name: cicd
