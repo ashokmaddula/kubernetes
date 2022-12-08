@@ -5,14 +5,15 @@ metadata:
   name: nginx-rpc
 spec:
   minReadySeconds: 3
-  repilica: 5
+  replicas: 5
   selector:
-       app: nginx
+      app: nginx
   template:
     metadata:
-    labels:
-      app: nginx
-      ver: 1.23
+      name: nginx-pod
+      labels:
+        app: nginx
+        ver: "1.23"
     spec:
       containers:
         - name: nginx
