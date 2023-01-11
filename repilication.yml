@@ -5,7 +5,7 @@ metadata:
   name: nginx-rpc
 spec:
   minReadySeconds: 3
-  replicas: 5
+  replicas: 3
   selector:
       app: nginx
   template:
